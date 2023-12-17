@@ -54,8 +54,8 @@ void swap_node(listint_t *a, listint_t *b)
 	if (b->next)
 		b->next->prev = a;
 
-	a->prev = b;
 	a->next = b->next;
 	b->prev = a->prev;
+	a->prev = b;
 	b->next = a;
 }
