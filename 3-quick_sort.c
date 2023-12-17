@@ -63,7 +63,7 @@ void quickSort(int *array, size_t size, int lowindex, int highindex)
  */
 int Lomutopartiton(int *array, size_t size, int lowindex, int highindex)
 {
-	int i = (lowindex - 1), povit = array[highindex], j;
+	int i = lowindex, povit = array[highindex], j;
 
 	for (j =  lowindex; j <= highindex; j++)
 	{
@@ -73,9 +73,9 @@ int Lomutopartiton(int *array, size_t size, int lowindex, int highindex)
 			swapElement(array, size, &array[i], &array[j]);
 		}
 	}
-	swapElement(array, size, &array[i + 1], &array[highindex]);
+	swapElement(array, size, &array[i], &array[highindex]);
 
-	return (i + 1);
+	return (i);
 }
 
 /**
