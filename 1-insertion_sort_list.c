@@ -27,7 +27,7 @@ void insertion_sort_list(listint_t **list)
 			if (i->prev->n > i->n)
 			{
 				swap_node(i->prev, i);
-				if (i->prev == NULL)
+				if (!i->prev)
 					*list = i;
 				print_list((const listint_t *)*list);
 			}
