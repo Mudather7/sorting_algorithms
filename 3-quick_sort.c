@@ -1,5 +1,10 @@
 #include "sort.h"
 
+void quick_sort(int *array, size_t size);
+void quickSort(int *array, size_t size, size_t lowindex, size_t highindex);
+int Lomutopartiton(int *array, size_t size, size_t lowindex, size_t highindex);
+void swapElement(int *array, size_t size, int *a, int *b);
+
 /**
  * quick_sort - function that sorts an array of integers
  * in ascending order using the Quick sort algorithm
