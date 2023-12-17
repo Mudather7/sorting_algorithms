@@ -29,7 +29,7 @@ void insertion_sort_list(listint_t **list)
 				swap_node(i->prev, i);
 				if (i->prev == NULL)
 					*list = i;
-				print_list(*list);
+				print_list((const listint_t *)*list);
 			}
 			else
 				i = i->prev;
