@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
  * quick_sort - function that sorts an array of integers
  * in ascending order using the Quick sort algorithm
@@ -33,7 +34,9 @@ void quickSort(int *array, size_t size, size_t lowindex, size_t highindex)
 {
 	if (lowindex < highindex)
 	{
-		size_t po = partiton(array, size, lowindex, highindex);
+		size_t po;
+
+		po = partiton(array, size, lowindex, highindex);
 
 		quickSort(array, size, lowindex, po - 1);
 		quickSort(array, size, po + 1, highindex);
