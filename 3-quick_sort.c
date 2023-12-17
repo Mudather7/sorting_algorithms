@@ -36,7 +36,7 @@ void quickSort(int *array, size_t size, size_t lowindex, size_t highindex)
 	{
 		size_t po;
 
-		po = partiton(array, size, lowindex, highindex);
+		po = Lomutopartiton(array, size, lowindex, highindex);
 
 		quickSort(array, size, lowindex, po - 1);
 		quickSort(array, size, po + 1, highindex);
@@ -44,7 +44,7 @@ void quickSort(int *array, size_t size, size_t lowindex, size_t highindex)
 }
 
 /**
- * partiton - partiton the array
+ * Lomutopartiton - partiton the array
  *
  * @array: an array of integer
  *
@@ -56,7 +56,7 @@ void quickSort(int *array, size_t size, size_t lowindex, size_t highindex)
  *
  * Return: size_t
  */
-int partiton(int *array, size_t size, size_t lowindex, size_t highindex)
+int Lomutopartiton(int *array, size_t size, size_t lowindex, size_t highindex)
 {
 	size_t i = (lowindex - 1), povit = array[highindex], j;
 

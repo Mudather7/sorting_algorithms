@@ -33,7 +33,7 @@ void quick_sort(int *array, size_t size);
 
 void swapElement(int *array, size_t size, int *a, int *b);
 
-int partiton(int *array, size_t size, size_t lowindex, size_t highindex);
+int Lomutopartiton(int *array, size_t size, size_t lowindex, size_t highindex);
 
 void quickSort(int *array, size_t size, size_t lowindex, size_t highindex);
 
