@@ -32,7 +32,7 @@ void insertion_sort_list(listint_t **list)
 				print_list((const listint_t *)*list);
 			}
 			else
-				i = i->prev;
+				i = i->next;
 		}
 	}
 }
