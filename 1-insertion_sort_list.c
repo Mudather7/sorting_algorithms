@@ -17,7 +17,7 @@ void insertion_sort_list(listint_t **list)
 
 	j = (*list)->next;
 
-	for (; j != NULL; )
+	while (j)
 	{
 		i = j;
 		j = j->next;
