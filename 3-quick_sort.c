@@ -39,7 +39,7 @@ void quickSort(int *array, size_t size, size_t lowindex, size_t highindex)
 {
 	if (lowindex < highindex)
 	{
-		int po;
+		size_t po;
 
 		po = Lomutopartiton(array, size, lowindex, highindex);
 
