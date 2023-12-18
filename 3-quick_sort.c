@@ -1,8 +1,8 @@
 #include "sort.h"
 
 void quick_sort(int *array, size_t size);
-void quickSort(int *array, size_t size, int lowindex, int highindex);
-int Lomutopartiton(int *array, size_t size, int lowindex, int highindex);
+void quickSort(int *array, size_t size, size_t lowindex, size_t highindex);
+int Lomutopartiton(int *array, size_t size, size_t lowindex, size_t highindex);
 void swapElement(int *array, size_t size, int *a, int *b);
 
 /**
@@ -35,7 +35,7 @@ void quick_sort(int *array, size_t size)
  *
  * Return: nothing
  */
-void quickSort(int *array, size_t size, int lowindex, int highindex)
+void quickSort(int *array, size_t size, size_t lowindex, size_t highindex)
 {
 	if (lowindex < highindex)
 	{
@@ -61,9 +61,10 @@ void quickSort(int *array, size_t size, int lowindex, int highindex)
  *
  * Return: size_t
  */
-int Lomutopartiton(int *array, size_t size, int lowindex, int highindex)
+int Lomutopartiton(int *array, size_t size, size_t lowindex, size_t highindex)
 {
-	int i = lowindex, povit = array[highindex], j;
+	size_t i = lowindex, j;
+	int povit = array[highindex];
 
 	for (j =  lowindex; j < highindex; j++)
 	{
