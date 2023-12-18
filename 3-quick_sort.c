@@ -69,8 +69,8 @@ int Lomutopartiton(int *array, size_t size, int lowindex, int highindex)
 	{
 		if (array[j] < povit)
 		{
+			swapElement(array, size, &array[j], &array[i]);
 			i++;
-			swapElement(array, size, &array[i], &array[j]);
 		}
 	}
 	swapElement(array, size, &array[i], &array[highindex]);
