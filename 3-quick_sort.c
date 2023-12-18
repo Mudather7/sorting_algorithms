@@ -2,19 +2,24 @@
 /**
  * Swap - swap two int value
  *
+ * @array: an array to sort
+ *
+ * @size: the size of the array
+ *
  * @a: the first integer
  *
  * @b: the second integer
  *
  * Return: void
  */
-void Swap(int *a, int *b)
+void Swap(int *array, size_t size, int *a, int *b)
 {
 	int swap;
 
 	swap = *a;
 	*a = *b;
 	*b = swap;
+	print_array(array, size);
 }
 
 /**
@@ -30,22 +35,21 @@ void Swap(int *a, int *b)
  *
  * Return: size_t
  */
-size_t partition(int *array, size_t size, size_t lowindex, size_t highindex)
+size_t partition(int *array, size_t size, int lowindex, int highindex)
 {
-	size_t i = lowindex, j;
+	int i = lowindex, j;
 	int povit = array[highindex];
 
 	for (j = lowindex; j < highindex; j++)
 	{
 		if (array[j] < povit)
 		{
-			Swap(&array[i], &array[j]);
-			print_array(array, size);
+			Swap(array, size, &array[i], &array[j]);
+			i++;
 		}
 	}
 
-	Swap(&array[i], &array[highindex]);
-	print_array(array, size);
+	Swap(array, size, &array[i], &array[highindex]);
 
 	return (i);
 }
