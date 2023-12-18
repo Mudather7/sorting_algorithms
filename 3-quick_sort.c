@@ -1,26 +1,4 @@
 #include "sort.h"
-/**
- * Swap - swap two int value
- *
- * @array: an array to sort
- *
- * @size: the size of the array
- *
- * @a: the first integer
- *
- * @b: the second integer
- *
- * Return: void
- */
-void Swap(int *array, size_t size, int *a, int *b)
-{
-	int swap;
-
-	swap = *a;
-	*a = *b;
-	*b = swap;
-	print_array(array, size);
-}
 
 /**
  * partition - partition the array
@@ -37,19 +15,27 @@ void Swap(int *array, size_t size, int *a, int *b)
  */
 size_t partition(int *array, size_t size, int lowindex, int highindex)
 {
-	int i = lowindex, j;
+	int i = lowindex, j, swap;
 	int povit = array[highindex];
 
 	for (j = lowindex; j < highindex; j++)
 	{
 		if (array[j] < povit)
 		{
-			Swap(array, size, &array[i], &array[j]);
+			swap = array[i];
+			array[i] = array[j];
+			array[j] = swap;
+			if (array[i] != array[j])
+				print_array(array, size);
 			i++;
 		}
 	}
 
-	Swap(array, size, &array[i], &array[highindex]);
+	swap = array[i];
+	array[i] = array[highindex];
+	array[highindex] = swap;
+	if (array[i] != array[highindex])
+		print_array(array, size);
 
 	return (i);
 }
