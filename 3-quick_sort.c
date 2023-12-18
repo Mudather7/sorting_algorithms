@@ -54,11 +54,11 @@ size_t partition(int *array, size_t size, int lowindex, int highindex)
  *
  * Return: void
  */
-void QuickSort(int *array, size_t size, size_t lowindex, size_t highindex)
+void QuickSort(int *array, size_t size, int lowindex, int highindex)
 {
 	if (lowindex < highindex)
 	{
-		size_t povit;
+		int povit;
 
 		povit = partition(array, size, lowindex, highindex);
 
