@@ -9,13 +9,13 @@
  *
  * Return: void
  */
-void Swap(int a, int b)
+void Swap(int *a, int *b)
 {
 	int swap;
 
-	swap = a;
-	a = b;
-	b = swap;
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }
 
 /**
@@ -40,14 +40,14 @@ size_t partition(int *array, size_t size, int lowindex, int highindex)
 	{
 		if (array[j] < povit)
 		{
-			Swap(array[i], array[j]);
+			Swap(&array[i], &array[j]);
 			if (array[i] != array[j])
 				print_array(array, size);
 			i++;
 		}
 	}
 
-	Swap(array[i], array[highindex]);
+	Swap(&array[i], &array[highindex]);
 	if (array[i] != array[highindex])
 		print_array(array, size);
 
