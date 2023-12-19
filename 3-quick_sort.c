@@ -1,6 +1,24 @@
 #include "sort.h"
 
 /**
+ * Swap - swap two values
+ *
+ * @a: the first value
+ *
+ * @b: the second value
+ *
+ * Return: void
+ */
+void Swap(int a, int b)
+{
+	int swap;
+
+	swap = a;
+	a = b;
+	b = swap;
+}
+
+/**
  * partition - partition the array
  *
  * @array: an array to sort
@@ -15,25 +33,21 @@
  */
 size_t partition(int *array, size_t size, int lowindex, int highindex)
 {
-	int i = lowindex, j, swap;
+	int i = lowindex, j;
 	int povit = array[highindex];
 
 	for (j = lowindex; j < highindex; j++)
 	{
 		if (array[j] < povit)
 		{
-			swap = array[i];
-			array[i] = array[j];
-			array[j] = swap;
+			Swap(array[i], array[j]);
 			if (array[i] != array[j])
 				print_array(array, size);
 			i++;
 		}
 	}
 
-	swap = array[i];
-	array[i] = array[highindex];
-	array[highindex] = swap;
+	Swap(array[i], array[highindex]);
 	if (array[i] != array[highindex])
 		print_array(array, size);
 
